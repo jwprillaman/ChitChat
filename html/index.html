@@ -4,11 +4,18 @@
 		<meta charset="utf-8" />
 		<title> ChitChat </title>
 		<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
 		<script src="/bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="/js/routes.js"></script>
+		<script type="text/javascript" src="/js/controllers.js"></script>
+
 		<link rel="import" href="/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
 		<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
 		<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="/bower_components/paper-drawer-panel/paper-drawer-panel.html">
+		<link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+		<link rel="import" href="/bower_components/paper-item/paper-item.html">
 		<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
 		<link rel="import" href="/bower_components/iron-pages/iron-pages.html">	
 </head>
@@ -20,16 +27,14 @@
 				<div title>ChitChat</div>
 			</paper-toolbar>
 		</paper-scroll-header-panel>
-		<iron-pages selected="0">
-			<div id="login-page">
-				<p> Login </p>
+		<paper-drawer-panel id="menu">
+			<div drawer> 
+				<paper-menu>
+					<paper-item> Home </paper-item>
+					<paper-item> Walkie </paper-item>
+					<paper-item> Settings </paper-item>
+				</paper-menu>
 			</div>
-			<div id="messenger-page">
-				<p> messenger </p>
-			</div>
-			<div id="settings-page">
-				<p>Settings</p>
-			</div>
-		</iron-pages>
+			
 	</body>
 </html>
