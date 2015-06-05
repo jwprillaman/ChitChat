@@ -1,3 +1,3 @@
-var app.controller('LoginController',function(){
+var app.controller('NavController',function(){
 
 });

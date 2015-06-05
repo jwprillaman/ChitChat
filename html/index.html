@@ -30,11 +30,12 @@
 		<paper-drawer-panel id="menu">
 			<div drawer> 
 				<paper-menu>
-					<paper-item> Home </paper-item>
+					<paper-item><a href="#home">Home</a> </paper-item>
 					<paper-item> Walkie </paper-item>
 					<paper-item> Settings </paper-item>
 				</paper-menu>
 			</div>
-			
+			<div ng-view class="index-view-container">
+			</div>	
 	</body>
 </html>
