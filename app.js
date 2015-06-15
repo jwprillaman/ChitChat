@@ -29,6 +29,7 @@ app.use('/users', users);
 app.use('/bower_components',express.static(__dirname + '/bower_components'));
 //add js path
 app.use('/js',express.static(__dirname + '/js'));
+app.use('/html',express.static(__dirname + '/html'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

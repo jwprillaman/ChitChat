@@ -5,7 +5,8 @@
 		<title> ChitChat </title>
 		<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
-		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="/js/app.js"></script>
 		<script type="text/javascript" src="/js/routes.js"></script>
 		<script type="text/javascript" src="/js/controllers.js"></script>
@@ -28,14 +29,17 @@
 			</paper-toolbar>
 		</paper-scroll-header-panel>
 		<paper-drawer-panel id="menu">
+
 			<div drawer> 
 				<paper-menu>
-					<paper-item><a href="#home">Home</a> </paper-item>
-					<paper-item> Walkie </paper-item>
-					<paper-item> Settings </paper-item>
+					<paper-item><a href="#/">Home</a> </paper-item>
+					<paper-item><a href="#/walkie"> Walkie </a></paper-item>
+					<paper-item><a href="#/settings"> Settings </a></paper-item>
 				</paper-menu>
 			</div>
-			<div ng-view class="index-view-container">
-			</div>	
+			<div main>
+				<div ng-view class="index-view-container"></div>
+			</div>
+		</paper-drawer-panel>
 	</body>
 </html>
