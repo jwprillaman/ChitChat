@@ -1,16 +1,16 @@
 app.config(function($routeProvider){
-	$.routeProvider
+	$routeProvider
 		.when('/', {
-			templateUrl : 'home.html',
+			templateUrl : '/html/home.html',
 			controller  : 'HomeController'
 		})
 		.when('/walkie',{
-			templateUrl : 'walkie.html',
+			templateUrl : '/html/walkie.html',
 			controller  : 'WalkieController'
 		})
 		.when('/settings',{
-			templateUrl : 'settings.html',
+			templateUrl : '/html/settings.html',
 			controller  : 'SettingsController'
-		});
+		})
 });
 
