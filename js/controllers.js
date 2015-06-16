@@ -3,6 +3,12 @@ app.controller('NavController',function($scope){
 });
 app.controller('HomeController',function($scope){
 	$scope.banner = "Welcome";
+	$scope.username = 'anon';
+	$scope.setUsername = function(name) {
+		$scope.username = name;
+		return $scope.username;
+	}
+	
 });
 app.controller('WalkieController',function($scope){
 	$scope.banner = "Walkie";
