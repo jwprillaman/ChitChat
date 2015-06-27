@@ -13,9 +13,13 @@
 	</head>
 	
 	<body>
-		<div ng-controller="sidePanel">
-			<div ng-view ></div>
-		</div>		
+		<div ng-controller="SidePanelController">
+			<ul>
+				<li><a href="#/">Home</a></li>
+				<li><a href="#/walkie">Walkie</a></li>
+				<li><a href="#/settings">Settings</a></li>
+			</ul>
+		</div>				
 		<div ng-view class="index-view-container"></div>
 	</body>
 </html>

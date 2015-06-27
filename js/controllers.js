@@ -1,4 +1,4 @@
-app.controller('sidePanelController',function($scope,User){
+app.controller('SidePanelController',function($scope,User){
 	$scope.User = User;
 	$scope.User.name = "anon";
 });
