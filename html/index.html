@@ -13,12 +13,8 @@
 	</head>
 	
 	<body>
-		<div>
-			<ul>
-				<li><a href="#/">home</a></li>
-				<li><a href="#/walkie">walkie</a></li>
-				<li><a href="#/settings">Settings</a></li>
-			</ul>
+		<div ng-controller="sidePanel">
+			<div ng-view ></div>
 		</div>		
 		<div ng-view class="index-view-container"></div>
 	</body>

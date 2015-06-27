@@ -1,7 +1,9 @@
-app.controller('NavController',function($scope){
-	$scope.user = "anon";
+app.controller('sidePanelController',function($scope,User){
+	$scope.User = User;
+	$scope.User.name = "anon";
 });
-app.controller('HomeController',function($scope){
+app.controller('HomeController',function($scope,User){
+	$scope.User = User;
 	$scope.banner = "Welcome";
 });
 app.controller('WalkieController',function($scope){
