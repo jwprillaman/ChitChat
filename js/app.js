@@ -1,5 +1,6 @@
-var app = angular.module('ChitChat', ['ngRoute']);
-app.factory('User' , function () {
+var ang = angular.module('ChitChat', ['ngRoute']);
+ang.factory('User' , function () {
 	return { name: '',
 					 handle: ''};
 });
+

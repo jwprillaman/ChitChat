@@ -1,4 +1,4 @@
-app.config(function($routeProvider){
+ang.config(function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl : '/html/home.html',
