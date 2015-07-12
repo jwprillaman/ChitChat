@@ -7,8 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('ChitChat:server');
 var http = require('http');
-var io = require('socket.io');
-
+var sock = require('../js/socket.js');
 /**
  * Get port from environment and store in Express.
  */
@@ -32,8 +31,7 @@ server.on('listening', onListening);
 
 
 // add io
-
-io.listen(server);
+var io = require('../js/socket.js').listen(server)
 
 /**
  * Normalize a port into a number, string, or false.
