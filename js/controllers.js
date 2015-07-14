@@ -1,13 +1,13 @@
 ang.controller('SidePanelController',function($scope,User){
 	$scope.User = User;
-	$scope.User.name = "anon";
+	$scope.User.name = "Anon";
 });
-ang.controller('HomeController',function($scope,User){
+ang.controller('ChitController',function($scope,User){
 	$scope.User = User;
-	$scope.banner = "Welcome";
+	$scope.banner = "Chit";
 });
-ang.controller('WalkieController',function($scope,User){
-	$scope.banner = "Walkie";
+ang.controller('ChatController',function($scope,User){
+	$scope.banner = "Chat";
 	$scope.User = User;
 
 	$scope.sendMessage = function(){

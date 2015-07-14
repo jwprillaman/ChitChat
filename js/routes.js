@@ -1,12 +1,12 @@
 ang.config(function($routeProvider){
 	$routeProvider
 		.when('/', {
-			templateUrl : '/html/home.html',
-			controller  : 'HomeController'
+			templateUrl : '/html/chit.html',
+			controller  : 'ChatController'
 		})
-		.when('/walkie',{
-			templateUrl : '/html/walkie.html',
-			controller  : 'WalkieController'
+		.when('/chat',{
+			templateUrl : '/html/chat.html',
+			controller  : 'ChatController'
 		})
 		.when('/settings',{
 			templateUrl : '/html/settings.html',
