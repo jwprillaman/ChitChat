@@ -6,4 +6,5 @@ function sendMessage(){
 	var data = { user: 'anon',
 							 message: $('#message').val()}
 	socket.emit('message', data);
+	$('#message').val('');
 };
