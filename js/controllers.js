@@ -1,14 +1,22 @@
-app.controller('SidePanelController',function($scope,User){
+ang.controller('SidePanelController',function($scope,User){
 	$scope.User = User;
 	$scope.User.name = "anon";
 });
-app.controller('HomeController',function($scope,User){
+ang.controller('HomeController',function($scope,User){
 	$scope.User = User;
 	$scope.banner = "Welcome";
 });
-app.controller('WalkieController',function($scope){
+ang.controller('WalkieController',function($scope,User){
 	$scope.banner = "Walkie";
+	$scope.User = User;
+
+	$scope.sendMessage = function(){
+	  var data = { user: User.name,
+	               message: $('#message').val()}
+	  socket.emit('message', data);
+	  $('#message').val('');
+	};
 });
-app.controller('SettingsController',function($scope){
+ang.controller('SettingsController',function($scope){
 	$scope.banner = "Settings";
 });
