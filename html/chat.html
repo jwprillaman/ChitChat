@@ -1,6 +1,13 @@
 <h1> {{ banner }} </h1>
+<div id="chat-user-list">
+	<h3>User list</h3>
+</div>
 <div id="chat-feed">
-
+	<h3>Feed</h3>
+</div>
+<div id="chat-room-controls">
+	<button ng-click="joinRoom()">Join</button>
+	<button ng-click="leaveRoom()">Leave</button>
 </div>
 <form id="chat-message">
 	<input id="message" type="text" name="message">
