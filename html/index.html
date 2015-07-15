@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="/js/routes.js"></script>
 		<script type="text/javascript" src="/js/controllers.js"></script>
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/js/messaging.js"></script>
 		<script type="text/javascript">
 			var socket = io();
 		</script>
@@ -18,6 +19,9 @@
 	
 	<body>
 		<div ng-controller="SidePanelController">
+			<div id="index-header">
+				<span>{{ User.name }}</span>
+			</div>
 			<ul>
 				<li><a href="#/">Home</a></li>
 				<li><a href="#/walkie">Walkie</a></li>
