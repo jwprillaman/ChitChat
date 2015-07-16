@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('ChitChat:server');
 var http = require('http');
+var https = require('http2');
+var fs = require('fs');
 var sock = require('../js/socket.js');
 /**
  * Get port from environment and store in Express.
@@ -19,7 +21,14 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
+
+//http2
+
+options = { key :  fs.readFileSync('./localhost.key'),
+						cert : fs.readFileSync('./localhost.crt')
+					};
+var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
