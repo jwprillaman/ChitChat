@@ -35,6 +35,14 @@ module.exports.listen = function(app){
 			
 			io.emit('update users', users);		
 		});
+		socket.on('create room', function(data){
+			rooms.push(data.room);
+			console.log( data.user + " created room " + data.room);
+			io.emit('update rooms', rooms);
+		});
+		socket.on('update rooms', function(data){
+			io.emit('update rooms', rooms);
+		});
 	});
 	return io;
 };

@@ -8,6 +8,7 @@ ang.controller('ChitController',function($scope,User){
 	$scope.banner = "Chit";
 });
 ang.controller('ChatController',function($scope,User){
+	socket.emit('update rooms', {});
 	$scope.banner = "Chat";
 	$scope.User = User;
 	$scope.rooms;
@@ -31,6 +32,15 @@ ang.controller('ChatController',function($scope,User){
 		socket.emit('leave room', data);
 		$scope.User.room = "root";
 	};	
+});
+ang.controller('CreateRoomController', function($scope, User){
+	$scope.banner = "Create Room";
+	$scope.createRoom = function(){
+		var data = { user : User.name,
+								 room : $('#roomName').val()
+							 }
+		socket.emit('create room', data);	
+	}
 });
 ang.controller('SettingsController',function($scope){
 	$scope.banner = "Settings";
