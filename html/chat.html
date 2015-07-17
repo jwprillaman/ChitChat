@@ -5,9 +5,14 @@
 <div id="chat-feed">
 	<h3>Feed</h3>
 </div>
-<div id="chat-room-controls">
-	<button ng-click="joinRoom()">Join</button>
-	<button ng-click="leaveRoom()">Leave</button>
+<div id="chat-room-list">
+	<div ng-repeat="room in rooms" id="chat-single room">
+		<span class="chat-room-name"> {{ room }} </span>
+		<div id="chat-room-controls">
+			<button ng-click="joinRoom(room)">Join</button>
+			<button ng-click="leaveRoom(room)">Leave</button>
+		</div>
+	</div>
 </div>
 <form id="chat-message">
 	<input id="message" type="text" name="message">

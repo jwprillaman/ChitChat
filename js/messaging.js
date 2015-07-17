@@ -1,5 +1,9 @@
 var socket = io();
 
+function getScope(ctrlName) {
+	return angular.element($('#index-view-container')).scope();
+}
+
 socket.on('message', function(data){
 	$('#chat-feed').append($('<li>').text(data.user + ': ' + data.message));
 });
@@ -17,4 +21,8 @@ socket.on('update users', function(users){
 
 	$('#chat-user-list').html(userList);
 });
-
+socket.on('update rooms', function(rooms){
+	var $scope = getScope();
+	$scope.rooms = rooms;
+	$scope.$apply();
+});

@@ -1,6 +1,7 @@
 ang.controller('SidePanelController',function($scope,User){
 	$scope.User = User;
 	$scope.User.name = "Anon";
+	$scope.User.room = "root";
 });
 ang.controller('ChitController',function($scope,User){
 	$scope.User = User;
@@ -9,23 +10,26 @@ ang.controller('ChitController',function($scope,User){
 ang.controller('ChatController',function($scope,User){
 	$scope.banner = "Chat";
 	$scope.User = User;
-	$scope.Room = "room";
+	$scope.rooms;
 
 	$scope.sendMessage = function(){
 	  var data = { user    : User.name,
-	               message : $('#message').val()}
+	               message : $('#message').val(),
+								 room 	 : $scope.User.room}
 	  socket.emit('message', data);
 	  $('#message').val('');
 	};
-	$scope.joinRoom = function(){
+	$scope.joinRoom = function(room){
 		var data = { user : User.name,
-								 room : $scope.Room }
+								 room : room }
 		socket.emit('enter room', data);
+		$scope.User.room = room;
 	};
-	$scope.leaveRoom = function(){
+	$scope.leaveRoom = function(room){
 		var data = { user : User.name,
-								 room : $scope.Room }
+								 room : $scope.User.room }
 		socket.emit('leave room', data);
+		$scope.User.room = "root";
 	};	
 });
 ang.controller('SettingsController',function($scope){
