@@ -7,7 +7,7 @@
 </div>
 <a href="#/createRoom"><button>New Room</button></a>
 <div id="chat-room-list">
-	<div ng-repeat="room in rooms" id="chat-single room">
+	<div ng-repeat="room in rooms track by $index" id="chat-single room">
 		<span class="chat-room-name"> {{ room }} </span>
 		<div class="chat-room-controls">
 			<button ng-click="joinRoom(room)">Join</button>

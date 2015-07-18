@@ -33,13 +33,14 @@ ang.controller('ChatController',function($scope,User){
 		$scope.User.room = "root";
 	};	
 });
-ang.controller('CreateRoomController', function($scope, User){
+ang.controller('CreateRoomController', function($scope, User, $location){
 	$scope.banner = "Create Room";
 	$scope.createRoom = function(){
 		var data = { user : User.name,
 								 room : $('#roomName').val()
 							 }
 		socket.emit('create room', data);	
+		window.history.pushState('location','createRoom','/#/chat')
 	}
 });
 ang.controller('SettingsController',function($scope){
