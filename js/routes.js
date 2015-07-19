@@ -12,5 +12,9 @@ ang.config(function($routeProvider){
 			templateUrl : '/html/settings.html',
 			controller  : 'SettingsController'
 		})
+		.when('/createRoom',{
+			templateUrl : '/html/createRoom.html',
+			controller  : 'CreateRoomController'
+		})
 });
 
