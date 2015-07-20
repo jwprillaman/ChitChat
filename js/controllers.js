@@ -44,7 +44,7 @@ ang.controller('JoinController', function($scope, User){
 	socket.emit('update rooms', {});
 	$scope.banner = "Join Room";
 	$scope.User = User;
-	$scope.rooms;
+	$scope.rooms = [];
 	$scope.joinRoom = function(room){
 		var data = { user : User.name,
 								 room : room }
