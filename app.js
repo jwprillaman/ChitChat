@@ -24,13 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-//add bower_components path
-//app.use('/bower_components',express.static(__dirname + '/bower_components'));
 app.use('/node_modules',express.static(__dirname + '/node_modules'));
-//add js path
 app.use('/js',express.static(__dirname + '/js'));
 app.use('/html',express.static(__dirname + '/html'));
+app.use('/css',express.static(__dirname + '/css'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

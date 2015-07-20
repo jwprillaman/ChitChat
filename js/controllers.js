@@ -52,6 +52,9 @@ ang.controller('JoinController', function($scope, User){
 		$scope.User.room = room;
 		window.history.pushState('location','joinRoom','/#/chat');
 	};
+	$scope.createRoom = function(){
+		window.history.pushState('location','gotToCreateRoom','/#/createRoom');
+	};
 });
 ang.controller('SettingsController',function($scope){
 	$scope.banner = "Settings";
