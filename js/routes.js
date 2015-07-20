@@ -16,5 +16,9 @@ ang.config(function($routeProvider){
 			templateUrl : '/html/createRoom.html',
 			controller  : 'CreateRoomController'
 		})
+		.when('/join',{
+			templateUrl : '/html/join.html',
+			controller  : 'JoinController'
+		})
 });
 
