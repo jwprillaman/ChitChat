@@ -14,7 +14,7 @@ module.exports.listen = function(app){
 			console.log('Anon disconnected');
 		});
 		socket.on('message', function(data){
-			console.log(data.user + ': ' + data.message + "!for room " + data.room);
+			console.log(data);
 			//io.emit('message', data);
 			io.to(data.room).emit('message', data);
 		});
@@ -42,6 +42,9 @@ module.exports.listen = function(app){
 		});
 		socket.on('update rooms', function(data){
 			io.emit('update rooms', rooms);
+		});
+		socket.on('update users', function(data){
+			io.emit('update users', users);
 		});
 	});
 	return io;

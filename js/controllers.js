@@ -25,7 +25,8 @@ ang.controller('ChatController',function($scope,User){
 		socket.emit('leave room', data);
 		$scope.User.room = "root";
 		window.history.pushState('location','leaveRoom','/#/join');
-	};	
+	};
+	socket.emit('update users', {});	
 });
 ang.controller('CreateRoomController', function($scope, User, $location){
 	$scope.banner = "Create Room";
