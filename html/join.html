@@ -1,10 +1,15 @@
-<h2>{{ banner }}</h2>
-<a href="#/createRoom"><button>New Room</button></a>
-<div id="chat-room-list">
-	<div ng-repeat="room in rooms track by $index" id="chat-single room">
-		<span class="chat-room-name"> {{ room }} </span>
-		<div class="chat-room-controls">
-			<button ng-click="joinRoom(room)">Join</button>
-		</div>
+<div class="panel-heading">
+	<h2>{{ banner }}</h2>
+</div>
+<div class="panel-body">
+	<div id="chat-room-list" class="list-group">
+		<a ng-click="joinRoom(room)" ng-repeat="room in rooms track by $index" class="chat-single-room list-group-item">
+			<span class="chat-room-name"> {{ room }} </span>
+			<div class="chat-room-controls">
+			</div>
+		</a>
 	</div>
+</div>
+<div class="panel-footer text-center navbar-fixed-bottom">
+	<a href="#/createRoom" class="btn btn-default" role="button">Create Room</a>
 </div>

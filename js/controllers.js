@@ -6,6 +6,10 @@ ang.controller('SidePanelController',function($scope,User){
 ang.controller('ChitController',function($scope,User){
 	$scope.User = User;
 	$scope.banner = "Chit";
+	$scope.goJoin = function(){
+		console.log("goJoin");
+		window.history.pushState('location','goJoin','/#/join');
+	};
 });
 ang.controller('ChatController',function($scope,User){
 	$scope.banner = "Chat";
@@ -44,13 +48,16 @@ ang.controller('JoinController', function($scope, User){
 	socket.emit('update rooms', {});
 	$scope.banner = "Join Room";
 	$scope.User = User;
-	$scope.rooms;
+	$scope.rooms = [];
 	$scope.joinRoom = function(room){
 		var data = { user : User.name,
 								 room : room }
 		socket.emit('enter room', data);
 		$scope.User.room = room;
 		window.history.pushState('location','joinRoom','/#/chat');
+	};
+	$scope.createRoom = function(){
+		window.history.pushState('location','gotToCreateRoom','/#/createRoom');
 	};
 });
 ang.controller('SettingsController',function($scope){

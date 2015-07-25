@@ -1,5 +1,13 @@
-<h2>{{ banner }}</h2>
-<form id="createRoom">
-	<input type="text" id="roomName">
-	<button ng-click="createRoom()">Create Room</button>
-</form>
+<div class="panel-heading">
+	<h2>{{ banner }}</h2>
+</div>
+<div class="panel-body">
+	<form id="createRoom">
+		<div class="input-group">
+			<input type="text" class="form-control" id="roomName">
+			<span class="input-group-btn">		
+				<button type="button" class="btn btn-default" ng-click="createRoom()">Create Room</button>
+			</span>
+		</div>
+	</form>
+</div>

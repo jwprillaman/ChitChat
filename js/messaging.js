@@ -1,6 +1,6 @@
 var socket = io();
 
-function getScope(ctrlName) {
+function getScope() {
 	return angular.element($('#index-view-container')).scope();
 }
 
@@ -23,6 +23,8 @@ socket.on('update users', function(users){
 });
 socket.on('update rooms', function(rooms){
 	var $scope = getScope();
-	$scope.rooms = rooms;
-	$scope.$apply();
+	if($scope){
+		$scope.rooms = rooms;
+		$scope.$apply();
+	}
 });

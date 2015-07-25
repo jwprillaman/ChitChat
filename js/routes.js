@@ -2,7 +2,7 @@ ang.config(function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl : '/html/chit.html',
-			controller  : 'ChatController'
+			controller  : 'ChitController'
 		})
 		.when('/chat',{
 			templateUrl : '/html/chat.html',
