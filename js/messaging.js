@@ -18,7 +18,6 @@ socket.on('update users', function(users){
 	}else{
 		userList = '<span>None</span>';
 	}
-
 	$('#chat-user-list').html(userList);
 });
 socket.on('update rooms', function(rooms){

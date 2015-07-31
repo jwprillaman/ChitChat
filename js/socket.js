@@ -2,19 +2,21 @@ var socketIo = require('socket.io');
 
 module.exports.listen = function(app){
 	io = socketIo.listen(app);
-
+	var clients = {}; 
 	var users = [];
 	var rooms = ['root'];
 	io.on('connection', function(socket){
+		clients[socket.id] = socket;
 		console.log('Anon connected');
-
+		
 		// emit initial room list
 		socket.emit('update rooms', rooms);
 		socket.on('disconnect', function(){
+			delete clients[socket.id];
 			console.log('Anon disconnected');
 		});
 		socket.on('message', function(data){
-			console.log(data.user + ': ' + data.message + "!for room " + data.room);
+			console.log(data);
 			//io.emit('message', data);
 			io.to(data.room).emit('message', data);
 		});
@@ -42,6 +44,9 @@ module.exports.listen = function(app){
 		});
 		socket.on('update rooms', function(data){
 			io.emit('update rooms', rooms);
+		});
+		socket.on('update users', function(data){
+			io.emit('update users', users);
 		});
 	});
 	return io;
