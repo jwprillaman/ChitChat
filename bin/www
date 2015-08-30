@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('ChitChat:server');
 var http = require('http');
 var sock = require('../js/socket.js');
+var mongojs = require('mongojs');
 /**
  * Get port from environment and store in Express.
  */
@@ -20,6 +21,13 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+/**
+ * Connect to DB
+ */
+var databaseUrl = "127.0.0.1/ChitChat";
+var collections = ["rooms"];
+var db = mongojs(databaseUrl,collections) ;
 
 /**
  * Listen on provided port, on all network interfaces.
